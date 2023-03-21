@@ -11,6 +11,9 @@ app.use(cors());
 app.use(express.json());
 app.use(productRouter);
 
+app.listen(port, () => {
+  console.log(`listening on ${port}`);
+});
 // const productRouter = express.Router();
 
 // productRouter.get("/", async (req, res) => {
@@ -28,7 +31,3 @@ app.use(productRouter);
 // db.on("error", (error) => {
 //   console.log("error", error);
 // });
-
-app.listen(port, () => {
-  console.log(`listening on ${port}`);
-});
