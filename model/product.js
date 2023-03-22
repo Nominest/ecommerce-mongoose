@@ -3,6 +3,7 @@ import "../config/mongooseconfig.js";
 
 const ProductSchema = new mongoose.Schema(
   {
+    // id: ObjectID,
     description: String,
     spec: String,
     name: String,
