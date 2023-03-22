@@ -27,6 +27,28 @@ productRouter.get("/products", async (req, res) => {
   }
 });
 
+productRouter.delete("/products/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+
+    if (!product) {
+      return res.status(404).json({ msg: "Product not found" });
+    }
+
+    await product.remove();
+    res.json({ msg: "Product removed" });
+    console.log("product delete:", product);
+  } catch (error) {
+    console.error(error.message);
+
+    if (error.kind === "ObjectId") {
+      return res.status(404).json({ msg: "Product not found" });
+    }
+
+    res.status(500).send("Server error");
+  }
+});
+
 export default productRouter;
 // const productRouter = express.Router();
 
