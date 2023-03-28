@@ -1,8 +1,7 @@
 import express from "express";
-// import bodyParser from "body-parser";
 import cors from "cors";
-// import db from "./config/mongooseconfig.js";
 import productRouter from "./routes/productApi.js";
+import mongooseconfig from "./config/mongooseconfig.js";
 
 const app = express();
 const port = 4500;
@@ -12,6 +11,7 @@ app.use(express.json());
 app.use(productRouter);
 
 app.listen(port, () => {
+  mongooseconfig;
   console.log(`listening on ${port}`);
 });
 // const productRouter = express.Router();
