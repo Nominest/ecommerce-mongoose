@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import productRouter from "./routes/productApi.js";
 import mongooseconfig from "./config/mongooseconfig.js";
+require('dotenv').config()
 
 const app = express();
 const port = 4500;

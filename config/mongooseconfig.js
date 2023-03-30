@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+require('dotenv').config()
 
 const db = mongoose.connect(
-  "mongodb+srv://nomin:jqMgqQRYPjrQwnRd@cluster0.pthyhxo.mongodb.net/ecommerce?retryWrites=true&w=majority"
+process.env.REACT_APP_API_KEY
 );
 
 export default mongoose.connection;
