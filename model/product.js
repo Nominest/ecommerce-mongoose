@@ -14,7 +14,7 @@ const ProductSchema = new mongoose.Schema(
     category: String,
   },
   {
-    collection: "products",
+    collection: "sample_raining",
   }
 );
 
